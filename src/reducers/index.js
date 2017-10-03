@@ -4,14 +4,15 @@ export default (state = {clicked: 0, unicorns: 0}, action) => {
 	var clickedState = state.unicorns;
 	var unicornsState = state.unicorns;
 	switch (action.type) {
-		case 'INCREMENT':
+		case 'INCREMENT-COUNTER':
 			var clickedStatePlusOne = state.clicked + 1;
-			console.log('CASE INCREMENT');
 			return {clicked: clickedStatePlusOne, unicorns: unicornsState}
-		case 'DECREMENT':
+		case 'DECREMENT-COUNTER':
 			var clickedStateMinusOne = state.clicked - 1;
-			console.log('CASE DECREMENT');
 			return {clicked: clickedStateMinusOne, unicorns: unicornsState}
+		case 'ADD-UNICORN': 
+			var unicornsStatePlusOne = state.unicorns + 1;
+			return {clicked: clickedState, unicorns: unicornsStatePlusOne}
 		default:
 			return state
 	}

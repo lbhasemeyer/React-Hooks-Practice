@@ -18,13 +18,9 @@ class Counter extends Component {
     setTimeout(this.props.onIncrement, 1000)
   }
 
-  alertUnicorn() {
-    alert('UNICORN!');
-  }
-
   render() {
     //state name automatically gets "State" appended to the end for props?
-    const { clickedState, unicornState, onIncrement, onDecrement } = this.props
+    const { clickedState, onIncrement, onDecrement } = this.props
     return (
       <div>
         <p>
@@ -46,9 +42,6 @@ class Counter extends Component {
             Increment async
           </button>
         </p>
-        <button style={{backgroundColor: 'purple', color: 'white', height: 100, width: 300, marginTop: 50, border: 'none', borderRadius: 10}} onClick={this.alertUnicorn}>
-          Add Unicorn
-        </button>
       </div>
     )
   }
@@ -56,7 +49,6 @@ class Counter extends Component {
 
 Counter.propTypes = {
   clickedState: PropTypes.number.isRequired,
-  unicornState: PropTypes.number.isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired
 }

@@ -2,18 +2,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
-import Counter from './components/Counter'
+import AppContainer from './components/AppContainer'
 import counter from './reducers'
 
 const store = createStore(counter)
 const rootEl = document.getElementById('root')
-console.log('CLICKED STATE:', store.getState());
 const render = () => ReactDOM.render(
-  <Counter
+  <AppContainer
     clickedState={store.getState().clicked}
-    unicornState={store.getState().unicorns}
-    onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
-    onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
+    unicornsState={store.getState().unicorns}
+    onIncrement={() => store.dispatch({ type: 'INCREMENT-COUNTER' })}
+    onDecrement={() => store.dispatch({ type: 'DECREMENT-COUNTER' })}
+    onAddUnicorn={() => store.dispatch({ type: 'ADD-UNICORN' })}
   />,
   rootEl
 )
