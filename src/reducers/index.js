@@ -1,7 +1,7 @@
 //REDUCERS TAKE IN A COPY OF CURRENT STATE AND AN ACTION, THEN UPDATE STATE ACCORDINGLY
 //--DOES THIS UPDATE STORE AUTOMATICALLY?  HOW DOES IT UPDATE STORE?
 export default (state = {clicked: 0, unicorns: 0}, action) => {
-	var clickedState = state.unicorns;
+	var clickedState = state.clicked;
 	var unicornsState = state.unicorns;
 	switch (action.type) {
 		case 'INCREMENT-COUNTER':

@@ -9,7 +9,7 @@ class Counter extends Component {
   }
 
   incrementIfOdd() {
-    if (this.props.value % 2 !== 0) {
+    if (this.props.clickedState % 2 !== 0) {
       this.props.onIncrement()
     }
   }
@@ -26,19 +26,19 @@ class Counter extends Component {
         <p>
           Clicked: {clickedState} times
           {' '}
-          <button onClick={onIncrement}>
+          <button style={{backgroundColor: '#add8e6', color: 'white', border: 'none', borderRadius: 10}} onClick={onIncrement}>
             +
           </button>
           {' '}
-          <button onClick={onDecrement}>
+          <button style={{backgroundColor: '#add8e6', color: 'white', border: 'none', borderRadius: 10}} onClick={onDecrement}>
             -
           </button>
           {' '}
-          <button onClick={this.incrementIfOdd}>
+          <button style={{backgroundColor: '#e5e5e5', border: 'none', borderRadius: 10}} onClick={this.incrementIfOdd}>
             Increment if odd
           </button>
           {' '}
-          <button onClick={this.incrementAsync}>
+          <button style={{backgroundColor: '#e5e5e5', border: 'none', borderRadius: 10}} onClick={this.incrementAsync}>
             Increment async
           </button>
         </p>

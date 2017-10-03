@@ -9,19 +9,20 @@ class Unicorns extends Component {
 
   alertUnicorn() {
     this.props.onAddUnicorn();
-    var newUnicornCount = this.props.unicornsState+1;
-    var unicornPlural = (newUnicornCount === 1) ? ' UNICORN!' : ' UNICORNS!';
-    alert('NOW YOU HAVE ' + newUnicornCount + unicornPlural);
   }
 
   render() {
     //state name automatically gets "State" appended to the end for props?
-    const { unicornsState, onAddUnicorn } = this.props
+    const { unicornsState } = this.props
+    var unicornPlural = (unicornsState === 1) ? ' unicorn' : ' unicorns';
     return (
-      <div>
-        <button style={{backgroundColor: 'purple', color: 'white', height: 100, width: 300, marginTop: 50, border: 'none', borderRadius: 10}} onClick={this.alertUnicorn}>
+      <div style={{width: 300}}>
+        <button style={{backgroundColor: 'purple', color: 'white', height: 100, width: '100%', marginTop: 50, border: 'none', borderRadius: 10}} onClick={this.alertUnicorn}>
           Add Unicorn
         </button>
+        <div style={{textAlign: 'center'}}>
+          (You currently have {unicornsState} {unicornPlural})
+        </div>
       </div>
     )
   }
