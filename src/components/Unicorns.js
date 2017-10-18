@@ -13,7 +13,7 @@ class Unicorns extends Component {
     return (
       <div style={{width: 300}}>
         <button style={{backgroundColor: 'purple', color: 'white', height: 100, width: '100%', marginTop: 50, marginBottom: 10, border: 'none', borderRadius: 10}} onClick={onAddUnicorn}>
-          <p>Add Unicorn</p>
+          <p>Add Unicorn:::</p>
           <p>(You currently have {unicorns} {unicornPlural})!</p>
         </button>
         {unicornHerd}
