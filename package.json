@@ -5,7 +5,8 @@
   "devDependencies": {
     "enzyme": "^2.8.2",
     "react-scripts": "^1.0.2",
-    "react-test-renderer": "^15.6.1"
+    "react-test-renderer": "^15.6.1",
+    "sinon-spy-react": "^2.0.1"
   },
   "dependencies": {
     "prop-types": "^15.5.10",

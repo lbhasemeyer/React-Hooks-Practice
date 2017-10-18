@@ -9,7 +9,7 @@ class Counter extends Component {
   }
 
   incrementIfOdd() {
-    if (this.props.clickedState % 2 !== 0) {
+    if (this.props.clicked % 2 !== 0) {
       this.props.onIncrement()
     }
   }
@@ -19,21 +19,20 @@ class Counter extends Component {
   }
 
   render() {
-    //state name automatically gets "State" appended to the end for props?
-    const { clickedState, onIncrement, onDecrement } = this.props
+    const { clicked, onIncrement, onDecrement } = this.props
     return (
       <div>
         <p>
-          Clicked: {clickedState} times
-          {' '}
-          <button style={{backgroundColor: '#add8e6', color: 'white', border: 'none', borderRadius: 10}} onClick={onIncrement}>
-            +
-          </button>
+          Clicked: {clicked} times
           {' '}
           <button style={{backgroundColor: '#add8e6', color: 'white', border: 'none', borderRadius: 10}} onClick={onDecrement}>
             -
           </button>
           {' '}
+          <button style={{backgroundColor: '#add8e6', color: 'white', border: 'none', borderRadius: 10}} onClick={onIncrement}>
+            +
+          </button>
+          {' '}          
           <button style={{backgroundColor: '#e5e5e5', border: 'none', borderRadius: 10}} onClick={this.incrementIfOdd}>
             Increment if odd
           </button>
@@ -48,7 +47,7 @@ class Counter extends Component {
 }
 
 Counter.propTypes = {
-  clickedState: PropTypes.number.isRequired,
+  clicked: PropTypes.number.isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired
 }

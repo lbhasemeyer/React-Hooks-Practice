@@ -9,8 +9,8 @@ const store = createStore(counter)
 const rootEl = document.getElementById('root')
 const render = () => ReactDOM.render(
   <AppContainer
-    clickedState={store.getState().clicked}
-    unicornsState={store.getState().unicorns}
+    clicked={store.getState().clicked}
+    unicorns={store.getState().unicorns}
     onIncrement={() => store.dispatch({ type: 'INCREMENT-COUNTER' })}
     onDecrement={() => store.dispatch({ type: 'DECREMENT-COUNTER' })}
     onAddUnicorn={() => store.dispatch({ type: 'ADD-UNICORN' })}

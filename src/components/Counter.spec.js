@@ -26,16 +26,17 @@ describe('Counter component', () => {
     expect(p.text()).toMatch(/^Clicked: 0 times/)
   })
 
-  it('first button should call onIncrement', () => {
+  it('first button should call onDecrement', () => {
     const { buttons, actions } = setup()
     buttons.at(0).simulate('click')
-    expect(actions.onIncrement).toBeCalled()
+    expect(actions.onDecrement).toBeCalled()
   })
 
-  it('second button should call onDecrement', () => {
+
+  it('second button should call onIncrement', () => {
     const { buttons, actions } = setup()
     buttons.at(1).simulate('click')
-    expect(actions.onDecrement).toBeCalled()
+    expect(actions.onIncrement).toBeCalled()
   })
 
   it('third button should not call onIncrement if the counter is even', () => {

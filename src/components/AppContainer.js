@@ -6,17 +6,16 @@ import Unicorns from './Unicorns'
 class AppContainer extends Component {
 
   render() {
-    //state name automatically gets "State" appended to the end for props?
-    const { clickedState, unicornsState, onIncrement, onDecrement, onAddUnicorn } = this.props
+    const { clicked, unicorns, onIncrement, onDecrement, onAddUnicorn } = this.props
     return (
       <div>
         <Counter
-          clickedState={clickedState}
+          clicked={clicked}
           onIncrement={() => onIncrement()}
           onDecrement={() => onDecrement()}
         />
         <Unicorns
-          unicornsState={unicornsState}
+          unicorns={unicorns}
           onAddUnicorn={onAddUnicorn} />
       </div>
     )
@@ -24,8 +23,8 @@ class AppContainer extends Component {
 }
 
 AppContainer.propTypes = {
-  clickedState: PropTypes.number.isRequired,
-  unicornsState: PropTypes.number.isRequired,  
+  clicked: PropTypes.number.isRequired,
+  unicorns: PropTypes.number.isRequired,  
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired
 }

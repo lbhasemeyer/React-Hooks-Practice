@@ -4,19 +4,27 @@ import counter from './index'
 describe('reducers', () => {
   describe('counter', () => {
     it('should provide the initial state', () => {
-      expect(counter(undefined, {})).toBe(0)
+      var result = counter(undefined, {});
+      expect(result['clicked']).toBe(0)      
+      expect(result['unicorns']).toBe(0)       
     })
 
     it('should handle INCREMENT action', () => {
-      expect(counter(1, { type: 'INCREMENT' })).toBe(2)
+      var result = counter({clicked: 1, unicorns: 0}, { type: 'INCREMENT-COUNTER' });
+      expect(result['clicked']).toBe(2)      
+      expect(result['unicorns']).toBe(0) 
     })
 
     it('should handle DECREMENT action', () => {
-      expect(counter(1, { type: 'DECREMENT' })).toBe(0)
+      var result = counter({clicked: 1, unicorns: 0}, { type: 'DECREMENT-COUNTER' });
+      expect(result['clicked']).toBe(0)      
+      expect(result['unicorns']).toBe(0) 
     })
 
     it('should ignore unknown actions', () => {
-      expect(counter(1, { type: 'unknown' })).toBe(1)
+      var result = counter({clicked: 1, unicorns: 0}, { type: 'unknown' });
+      expect(result['clicked']).toBe(1)      
+      expect(result['unicorns']).toBe(0) 
     })
   })
 })
