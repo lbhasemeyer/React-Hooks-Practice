@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Button from '../styledComponents/Button.js';
 
 class Counter extends Component {
   constructor(props) {
@@ -25,21 +26,21 @@ class Counter extends Component {
         <p>
           Clicked: {clicked} times
           {' '}
-          <button style={{backgroundColor: '#add8e6', color: 'white', border: 'none', borderRadius: 10}} onClick={onDecrement}>
+          <Button color={'orange'} onClick={onDecrement}>
             -
-          </button>
+          </Button>
           {' '}
-          <button style={{backgroundColor: '#add8e6', color: 'white', border: 'none', borderRadius: 10}} onClick={onIncrement}>
+          <Button color={'orange'} onClick={onIncrement}>
             +
-          </button>
-          {' '}          
-          <button style={{backgroundColor: '#e5e5e5', border: 'none', borderRadius: 10}} onClick={this.incrementIfOdd}>
-            Increment if odd
-          </button>
+          </Button>
           {' '}
-          <button style={{backgroundColor: '#e5e5e5', border: 'none', borderRadius: 10}} onClick={this.incrementAsync}>
+          <Button color={'green'} onClick={this.incrementIfOdd}>
+            Increment if odd
+          </Button>
+          {' '}
+          <Button color={'green'} onClick={this.incrementAsync}>
             Increment async
-          </button>
+          </Button>
         </p>
       </div>
     )
