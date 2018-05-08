@@ -17,6 +17,9 @@ class AppContainer extends Component {
         <Unicorns
           unicorns={unicorns}
           onAddUnicorn={onAddUnicorn} />
+        <div style={{fontSize: 8, position: 'absolute', bottom: 0}}>
+          Jackalope by Nick Bluth from the Noun Project
+        </div>
       </div>
     )
   }
@@ -24,7 +27,7 @@ class AppContainer extends Component {
 
 AppContainer.propTypes = {
   clicked: PropTypes.number.isRequired,
-  unicorns: PropTypes.number.isRequired,  
+  unicorns: PropTypes.number.isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired
 }

@@ -7,6 +7,7 @@ export default styled.button`
   width: ${props=> (props.color === 'purple' ? '100%' : null)};
   margin-top: 50px;
   margin-bottom: 10px;
-  border: none;
+  outline: none;
+  cursor: pointer;
   border-radius: 10px;
 `;

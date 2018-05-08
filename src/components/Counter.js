@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Button from '../styledComponents/Button.js';
+import ContainerDiv from '../styledComponents/ContainerDiv.js';
+import JackalopeIcon from '../icons/jackalope.svg';
 
 class Counter extends Component {
   constructor(props) {
@@ -21,10 +23,14 @@ class Counter extends Component {
 
   render() {
     const { clicked, onIncrement, onDecrement } = this.props
+    let jackalopeHerd = [];
+    for(var i=0; i<clicked; i++){
+      jackalopeHerd.push(<img src={JackalopeIcon} height='50' width='50' alt='' />);
+    }
     return (
-      <div>
+      <ContainerDiv>
         <p>
-          Clicked: {clicked} times
+          Jackalopes: {clicked}
           {' '}
           <Button color={'orange'} onClick={onDecrement}>
             -
@@ -42,7 +48,8 @@ class Counter extends Component {
             Increment async
           </Button>
         </p>
-      </div>
+        {jackalopeHerd}
+      </ContainerDiv>
     )
   }
 }
