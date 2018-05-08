@@ -9,7 +9,7 @@ const store = createStore(counter)
 const rootEl = document.getElementById('root')
 const render = () => ReactDOM.render(
   <AppContainer
-    clicked={store.getState().clicked}
+    jackalopes={store.getState().jackalopes}
     unicorns={store.getState().unicorns}
     onIncrement={() => store.dispatch({ type: 'INCREMENT-COUNTER' })}
     onDecrement={() => store.dispatch({ type: 'DECREMENT-COUNTER' })}

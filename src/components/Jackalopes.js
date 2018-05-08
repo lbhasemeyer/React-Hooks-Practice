@@ -4,7 +4,7 @@ import Button from '../styledComponents/Button.js';
 import ContainerDiv from '../styledComponents/ContainerDiv.js';
 import JackalopeIcon from '../icons/jackalope.svg';
 
-class Counter extends Component {
+class Jackalopes extends Component {
   constructor(props) {
     super(props);
     this.incrementAsync = this.incrementAsync.bind(this);
@@ -12,7 +12,7 @@ class Counter extends Component {
   }
 
   incrementIfOdd() {
-    if (this.props.clicked % 2 !== 0) {
+    if (this.props.jackalopes % 2 !== 0) {
       this.props.onIncrement()
     }
   }
@@ -22,15 +22,15 @@ class Counter extends Component {
   }
 
   render() {
-    const { clicked, onIncrement, onDecrement } = this.props
+    const { jackalopes, onIncrement, onDecrement } = this.props
     let jackalopeHerd = [];
-    for(var i=0; i<clicked; i++){
+    for(var i=0; i<jackalopes; i++){
       jackalopeHerd.push(<img src={JackalopeIcon} height='50' width='50' alt='' />);
     }
     return (
       <ContainerDiv>
         <p>
-          Jackalopes: {clicked}
+          Jackalopes: {jackalopes}
           {' '}
           <Button color={'orange'} onClick={onDecrement}>
             -
@@ -54,10 +54,10 @@ class Counter extends Component {
   }
 }
 
-Counter.propTypes = {
-  clicked: PropTypes.number.isRequired,
+Jackalopes.propTypes = {
+  jackalopes: PropTypes.number.isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired
 }
 
-export default Counter
+export default Jackalopes

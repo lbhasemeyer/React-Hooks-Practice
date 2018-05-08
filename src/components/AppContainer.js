@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Counter from './Counter'
+import Jackalopes from './Jackalopes'
 import Unicorns from './Unicorns'
 
 class AppContainer extends Component {
 
   render() {
-    const { clicked, unicorns, onIncrement, onDecrement, onAddUnicorn } = this.props
+    const { jackalopes, unicorns, onIncrement, onDecrement, onAddUnicorn } = this.props
     return (
       <div>
-        <Counter
-          clicked={clicked}
+        <Jackalopes
+          jackalopes={jackalopes}
           onIncrement={() => onIncrement()}
           onDecrement={() => onDecrement()}
         />
@@ -26,7 +26,7 @@ class AppContainer extends Component {
 }
 
 AppContainer.propTypes = {
-  clicked: PropTypes.number.isRequired,
+  jackalopes: PropTypes.number.isRequired,
   unicorns: PropTypes.number.isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired

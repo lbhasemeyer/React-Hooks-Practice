@@ -1,7 +1,7 @@
 //TESTS
 import React from 'react'
 import { shallow } from 'enzyme'
-import Counter from './Counter'
+import Jackalopes from './Jackalopes'
 
 function setup(value = 0) {
   const actions = {
@@ -9,7 +9,7 @@ function setup(value = 0) {
     onDecrement: jest.fn()
   }
   const component = shallow(
-    <Counter value={value} {...actions} />
+    <Jackalopes value={value} {...actions} />
   )
 
   return {
@@ -20,10 +20,10 @@ function setup(value = 0) {
   }
 }
 
-describe('Counter component', () => {
+describe('Jackalopes component', () => {
   it('should display count', () => {
     const { p } = setup()
-    expect(p.text()).toMatch(/^Clicked: 0 times/)
+    expect(p.text()).toMatch(/^Jackalopes: 0/)
   })
 
   it('first button should call onDecrement', () => {
@@ -39,19 +39,19 @@ describe('Counter component', () => {
     expect(actions.onIncrement).toBeCalled()
   })
 
-  it('third button should not call onIncrement if the counter is even', () => {
+  it('third button should not call onIncrement if the Jackalopes count is even', () => {
     const { buttons, actions } = setup(42)
     buttons.at(2).simulate('click')
     expect(actions.onIncrement).not.toBeCalled()
   })
 
-  it('third button should call onIncrement if the counter is odd', () => {
+  it('third button should call onIncrement if the Jackalopes count is odd', () => {
     const { buttons, actions } = setup(43)
     buttons.at(2).simulate('click')
     expect(actions.onIncrement).toBeCalled()
   })
 
-  it('third button should call onIncrement if the counter is odd and negative', () => {
+  it('third button should call onIncrement if the Jackalopes count is odd and negative', () => {
     const { buttons, actions } = setup(-43)
     buttons.at(2).simulate('click')
     expect(actions.onIncrement).toBeCalled()
