@@ -11,8 +11,8 @@ const render = () => ReactDOM.render(
   <AppContainer
     jackalopes={store.getState().jackalopes}
     unicorns={store.getState().unicorns}
-    onIncrement={() => store.dispatch({ type: 'INCREMENT-COUNTER' })}
-    onDecrement={() => store.dispatch({ type: 'DECREMENT-COUNTER' })}
+    onIncrement={() => store.dispatch({ type: 'INCREMENT-JACKALOPES' })}
+    onDecrement={() => store.dispatch({ type: 'DECREMENT-JACKALOPES' })}
     onAddUnicorn={() => store.dispatch({ type: 'ADD-UNICORN' })}
   />,
   rootEl

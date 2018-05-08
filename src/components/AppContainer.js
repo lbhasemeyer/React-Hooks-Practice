@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import './AppContainer.css';
 import Jackalopes from './Jackalopes'
 import Unicorns from './Unicorns'
 import Button from '../styledComponents/Button.js';
@@ -14,7 +15,7 @@ class AppContainer extends Component {
             FIGHT!
           </Button>
         </div>
-        <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+        <div className="app__div-corral">
           <Unicorns
             unicorns={unicorns}
             onAddUnicorn={onAddUnicorn} />
@@ -23,7 +24,7 @@ class AppContainer extends Component {
             onIncrement={() => onIncrement()}
             onDecrement={() => onDecrement()}
           />
-          <div style={{fontSize: 8, position: 'absolute', bottom: 0}}>
+          <div className="app__div-copywright">
             Jackalope by Nick Bluth from the Noun Project
           </div>
         </div>

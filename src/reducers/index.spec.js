@@ -10,13 +10,13 @@ describe('reducers', () => {
     })
 
     it('should handle INCREMENT action', () => {
-      var result = counter({jackalopes: 1, unicorns: 0}, { type: 'INCREMENT-COUNTER' });
+      var result = counter({jackalopes: 1, unicorns: 0}, { type: 'INCREMENT-JACKALOPES' });
       expect(result['jackalopes']).toBe(2)
       expect(result['unicorns']).toBe(0)
     })
 
     it('should handle DECREMENT action', () => {
-      var result = counter({jackalopes: 1, unicorns: 0}, { type: 'DECREMENT-COUNTER' });
+      var result = counter({jackalopes: 1, unicorns: 0}, { type: 'DECREMENT-JACKALOPES' });
       expect(result['jackalopes']).toBe(0)
       expect(result['unicorns']).toBe(0)
     })

@@ -4,10 +4,10 @@ export default (state = {jackalopes: 0, unicorns: 0}, action) => {
 	var jackalopes = state.jackalopes;
 	var unicorns = state.unicorns;
 	switch (action.type) {
-		case 'INCREMENT-COUNTER':
+		case 'INCREMENT-JACKALOPES':
 			var jackalopesPlusOne = state.jackalopes + 1;
 			return {jackalopes: jackalopesPlusOne, unicorns: unicorns}
-		case 'DECREMENT-COUNTER':
+		case 'DECREMENT-JACKALOPES':
 			var jackalopesMinusOne = state.jackalopes - 1;
 			return {jackalopes: jackalopesMinusOne, unicorns: unicorns}
 		case 'ADD-UNICORN':

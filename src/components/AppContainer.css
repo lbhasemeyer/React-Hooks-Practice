@@ -1,0 +1,11 @@
+.app__div-corral {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.app__div-copywright {
+  font-size: 8px;
+  position: absolute;
+  bottom: 0px;
+}
