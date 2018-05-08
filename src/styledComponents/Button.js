@@ -3,11 +3,10 @@ import styled from 'styled-components';
 export default styled.button`
   background-color: ${props=> props.color};
   color: white;
-  height: ${props=> (props.color === 'purple' ? '100px' : null)};
-  width: ${props=> (props.color === 'purple' ? '100%' : null)};
-  margin-top: 50px;
-  margin-bottom: 10px;
+  margin: ${props=> (props.color === 'red' ? 'auto' : null)};
+  display: ${props=> (props.color === 'red' ? 'block' : null)};
   outline: none;
   cursor: pointer;
   border-radius: 10px;
+  margin-bottom: 10px;
 `;

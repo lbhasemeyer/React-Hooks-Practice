@@ -29,25 +29,22 @@ class Jackalopes extends Component {
     }
     return (
       <ContainerDiv>
-        <p>
+        <div>
           Jackalopes: {jackalopes}
           {' '}
           <Button color={'orange'} onClick={onDecrement}>
             -
           </Button>
-          {' '}
           <Button color={'orange'} onClick={onIncrement}>
             +
           </Button>
-          {' '}
           <Button color={'green'} onClick={this.incrementIfOdd}>
             Increment if odd
           </Button>
-          {' '}
           <Button color={'green'} onClick={this.incrementAsync}>
             Increment async
           </Button>
-        </p>
+        </div>
         {jackalopeHerd}
       </ContainerDiv>
     )

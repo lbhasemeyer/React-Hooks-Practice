@@ -15,10 +15,11 @@ class Unicorns extends Component {
     return (
       <ContainerDiv>
         <Button color={'purple'} onClick={onAddUnicorn}>
-          <p>Add Unicorn</p>
-          <p>(You currently have {unicorns} {unicornPlural})</p>
+          Add Unicorn (You currently have {unicorns} {unicornPlural})
         </Button>
-        {unicornHerd}
+        <div>
+          {unicornHerd}
+        </div>
       </ContainerDiv>
     )
   }
