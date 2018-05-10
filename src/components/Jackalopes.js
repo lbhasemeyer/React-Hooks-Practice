@@ -22,10 +22,11 @@ class Jackalopes extends Component {
   }
 
   render() {
-    const { jackalopes, onIncrement, onDecrement } = this.props
+    const { jackalopes, onIncrement, onDecrement, isFighting } = this.props
     let jackalopeHerd = [];
+    let iconClassName = isFighting === true ? 'jackalopes-fighting' : null;
     for(var i=0; i<jackalopes; i++){
-      jackalopeHerd.push(<img src={JackalopeIcon} height='50' width='50' alt='' />);
+      jackalopeHerd.push(<img key={i} src={JackalopeIcon} height='50' width='50' alt='' />);
     }
     return (
       <ContainerDiv>
@@ -45,7 +46,9 @@ class Jackalopes extends Component {
             Increment async
           </Button>
         </div>
-        {jackalopeHerd}
+        <div className={iconClassName}>
+          {jackalopeHerd}
+        </div>
       </ContainerDiv>
     )
   }

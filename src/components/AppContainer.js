@@ -7,20 +7,22 @@ import Button from '../styledComponents/Button.js';
 
 class AppContainer extends Component {
   render() {
-    const { jackalopes, unicorns, onIncrement, onDecrement, onAddUnicorn } = this.props
+    const { jackalopes, unicorns, isFighting, onIncrement, onDecrement, onAddUnicorn, onStartFight } = this.props
     return (
       <div className="app__div">
         <div>
-          <Button color={'red'}>
+          <Button color={'red'} onClick={onStartFight}>
             FIGHT!
           </Button>
         </div>
         <div className="app__div-corral">
           <Unicorns
             unicorns={unicorns}
+            isFighting = {isFighting}
             onAddUnicorn={onAddUnicorn} />
           <Jackalopes
             jackalopes={jackalopes}
+            isFighting = {isFighting}
             onIncrement={() => onIncrement()}
             onDecrement={() => onDecrement()}
           />
@@ -37,7 +39,8 @@ AppContainer.propTypes = {
   jackalopes: PropTypes.number.isRequired,
   unicorns: PropTypes.number.isRequired,
   onIncrement: PropTypes.func.isRequired,
-  onDecrement: PropTypes.func.isRequired
+  onDecrement: PropTypes.func.isRequired,
+  onStartFight: PropTypes.func.isRequired
 }
 
 export default AppContainer

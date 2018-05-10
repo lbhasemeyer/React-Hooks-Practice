@@ -11,9 +11,11 @@ const render = () => ReactDOM.render(
   <AppContainer
     jackalopes={store.getState().jackalopes}
     unicorns={store.getState().unicorns}
+    isFighting={store.getState().isFighting}
     onIncrement={() => store.dispatch({ type: 'INCREMENT-JACKALOPES' })}
     onDecrement={() => store.dispatch({ type: 'DECREMENT-JACKALOPES' })}
     onAddUnicorn={() => store.dispatch({ type: 'ADD-UNICORN' })}
+    onStartFight={() => store.dispatch({ type: 'START-FIGHT' })}
   />,
   rootEl
 )

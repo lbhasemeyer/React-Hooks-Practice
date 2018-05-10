@@ -9,6 +9,7 @@ class Unicorns extends Component {
     const { unicorns, onAddUnicorn } = this.props
     var unicornPlural = (unicorns === 1) ? ' unicorn' : ' unicorns';
     var unicornHerd = [];
+    let iconClassName = this.props.isFighting === true ? 'unicorns-fighting' : null;
     for(var i=0; i<unicorns; i++){
       unicornHerd.push(<img key={i} src={UnicornIcon} height='50' width='50' alt='' />)
     }
@@ -17,7 +18,7 @@ class Unicorns extends Component {
         <Button color={'purple'} onClick={onAddUnicorn}>
           Add Unicorn (You currently have {unicorns} {unicornPlural})
         </Button>
-        <div>
+        <div className={iconClassName}>
           {unicornHerd}
         </div>
       </ContainerDiv>

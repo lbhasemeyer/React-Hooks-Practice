@@ -9,3 +9,31 @@
   position: absolute;
   bottom: 0px;
 }
+
+/*fighting icons*/
+.unicorns-fighting {
+	position:relative;
+	animation:unicorns-fighting 6s;
+	-webkit-animation:unicorns-fighting 6s;
+}
+@keyframes unicorns-fighting {
+	0% {left: 0px;}
+	100% {left: 150px;}
+}
+@-webkit-keyframes unicorns-fighting {
+	0% {left: 0px;}
+	100% {left: 150px;}
+}
+.jackalopes-fighting {
+  position:relative;
+  animation:jackalopes-fighting 6s;
+  -webkit-animation:jackalopes-fighting 6s;
+}
+@keyframes jackalopes-fighting {
+	0% {left: 0px;}
+	100% {left: -150px;}
+}
+@-webkit-keyframes jackalopes-fighting {
+	0% {left: 0px;}
+	100% {left: -150px;}
+}
