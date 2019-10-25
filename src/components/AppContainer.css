@@ -10,6 +10,28 @@
   bottom: 0px;
 }
 
+.unicorns-fighting {
+	position:relative;
+	animation:unicorns-fighting 6s;
+	-webkit-animation:unicorns-fighting 6s;
+}
+
+.unicorn-section, .jackalope-section {
+	width: 50%;
+}
+
+.unicorns, .unicorns-fighting, {
+	width: 50%;
+}
+
+.jackalope-section {
+	text-align: right
+}
+
+.jackalopes, .jackalopes-fighting {
+	padding-left: 50%;
+}
+
 /*fighting icons*/
 .unicorns-fighting {
 	position:relative;
@@ -18,11 +40,11 @@
 }
 @keyframes unicorns-fighting {
 	0% {left: 0px;}
-	100% {left: 150px;}
+	100% {left: 500px;}
 }
 @-webkit-keyframes unicorns-fighting {
 	0% {left: 0px;}
-	100% {left: 150px;}
+	100% {left: 500px;}
 }
 .jackalopes-fighting {
   position:relative;
@@ -30,10 +52,10 @@
   -webkit-animation:jackalopes-fighting 6s;
 }
 @keyframes jackalopes-fighting {
-	0% {left: 0px;}
-	100% {left: -150px;}
+	0% {right: 0px;}
+	100% {right: 500px;}
 }
 @-webkit-keyframes jackalopes-fighting {
-	0% {left: 0px;}
-	100% {left: -150px;}
+	0% {right: 0px;}
+	100% {right: 500px;}
 }
