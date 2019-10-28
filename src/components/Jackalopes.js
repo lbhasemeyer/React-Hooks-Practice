@@ -1,63 +1,38 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import Button from '../styledComponents/Button.js';
-import ContainerDiv from '../styledComponents/ContainerDiv.js';
 import JackalopeIcon from '../icons/jackalope.svg';
 
-class Jackalopes extends Component {
+export default class Jackalopes extends React.Component {
   constructor(props) {
     super(props);
-    this.incrementAsync = this.incrementAsync.bind(this);
-    this.incrementIfOdd = this.incrementIfOdd.bind(this);
+    this.state = {
+      jackalopes: 0
+    };
+    this.onIncrement = this.onIncrement.bind(this);
   }
 
-  incrementIfOdd() {
-    if (this.props.jackalopes % 2 !== 0) {
-      this.props.onIncrement()
-    }
+  onIncrement() {
+    const newJackalopeState = this.state.jackalopes + 1;
+    this.setState({jackalopes: newJackalopeState});
   }
 
-  incrementAsync() {
-    setTimeout(this.props.onIncrement, 1000)
-  }
+  render() {    
+    let herdClassName = this.props.isFighting === true ? 'jackalopes-fighting' : 'jackalopes';
 
-  render() {
-    const { jackalopes, onIncrement, onDecrement, isFighting } = this.props
     let jackalopeHerd = [];
-    let iconClassName = isFighting === true ? 'jackalopes-fighting' : null;
-    for(var i=0; i<jackalopes; i++){
+    for(var i=0; i<this.state.jackalopes; i++){
       jackalopeHerd.push(<img key={i} src={JackalopeIcon} height='50' width='50' alt='' />);
     }
+
     return (
-      <ContainerDiv>
-        <div>
-          Jackalopes: {jackalopes}
-          {' '}
-          <Button color={'orange'} onClick={onDecrement}>
-            -
-          </Button>
-          <Button color={'orange'} onClick={onIncrement}>
-            +
-          </Button>
-          <Button color={'green'} onClick={this.incrementIfOdd}>
-            Increment if odd
-          </Button>
-          <Button color={'green'} onClick={this.incrementAsync}>
-            Increment async
-          </Button>
-        </div>
-        <div className={iconClassName}>
+      <div className="jackalope-section">
+        <Button color={'orange'} onClick={this.onIncrement}>
+          Add Jackalope (You currently have {jackalopeHerd.length})
+        </Button>
+        <div className={herdClassName}>
           {jackalopeHerd}
         </div>
-      </ContainerDiv>
+      </div>
     )
   }
 }
-
-Jackalopes.propTypes = {
-  jackalopes: PropTypes.number.isRequired,
-  onIncrement: PropTypes.func.isRequired,
-  onDecrement: PropTypes.func.isRequired
-}
-
-export default Jackalopes
