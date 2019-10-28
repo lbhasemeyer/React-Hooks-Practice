@@ -1,4 +1,3 @@
-//THIS IS THE COMPONENT WE WILL RENDER IN THE BODY OF THE COMPONENT (IN index.html)
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'

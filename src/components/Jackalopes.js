@@ -6,7 +6,7 @@ export default class Jackalopes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      jackalopes: 1
+      jackalopes: 0
     };
     this.onIncrement = this.onIncrement.bind(this);
   }
