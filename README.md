@@ -1,17 +1,7 @@
-
-| **Question 1**       |
-| :------------- |
-|  Answer 1 |
-
-```
-Question 1
-Answer 1
-```
-
-Question 1  
+# Question 1  
 Answer 1  
 <hr>
-Question 2  
+# Question 2  
 Answer 2  
 
 
