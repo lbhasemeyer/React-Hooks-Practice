@@ -1,15 +1,3 @@
-# Question 1  
-Answer 1  
-<hr>
-# Question 2  
-Answer 2  
-
-
-
-
-
-
-
 Icon made by Freepik from www.flaticon.com
 
 # Redux Counter Example
